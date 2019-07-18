@@ -56,5 +56,5 @@ Donde `{CONTAINER_NAME}` es el nombre del contenedor:
 * `{APP_NAME}-nginx`
 * `{APP_NAME}-mariadb`
 
-### Bibliográfia
+### Referencia
 Este repositorio es una mejora de este: https://github.com/stevenliebregt/docker-compose-lemp-stack
