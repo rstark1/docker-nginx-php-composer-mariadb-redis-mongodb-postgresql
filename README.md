@@ -3,13 +3,13 @@
 Este repositorio contiene una pequeña configuración `docker-compose` para un server local  `LEMP (Linux, Nginx, MariaDB, PHP)` con contenedores separados, incluyendo una base de datos vacia.
 [![LEMP](https://www.techcoil.com/wp-content/uploads/2018/03/lemp-logos.gif)](https://www.nginx.com/)
 
-# Antes de Ejecutar
+# Antes de ejecutar
 - Se debe tener instalado y configurado Docker Compose.
 [![docker-compose](https://cdn-images-1.medium.com/max/1400/1*olciNQ2FJu8HVmfjOjQCag.png)](https://docs.docker.com/)
 
 ## Detalles
 
-Las siguientes versiones son usadas:
+Se usaron las siguientes versiones:
 
 * PHP 7.2 (FPM)
 * Nginx 1.13.6
@@ -22,13 +22,13 @@ La configuración de  PHP se encuentra en `docker/dockerfiles/php/`.
 
 Puedes encontrar las siguientes variables de entorno incluidas en el archivo `.env`:
 
-| Key | Descripción |
+| Clave | Descripción |
 |-----|-------------|
 |APP_NAME|Nombre base utilizado para crear los contenedores.|
 |MYSQL_DATABASE|Nombre de la base de datos vacia.|
 |MYSQL_ROOT_PASSWORD|La contraseña del usuario ROOT.|
 
-### Instrucciones de Instalacion
+### Instrucciones de instalación
 - Entrar en la carpeta donde desea que ejecute
 - Descargar todo haciendo un clone.
 ```sh
@@ -45,9 +45,9 @@ $ docker-compose up
 
 ## Entrando a los contenedores
 
-Puedes usar el siguiente comando para entrar a un contenedor:
+Puede usar el siguiente comando para entrar a un contenedor:
 
-Donde `{CONTAINER_NAME}` es:
+Donde `{CONTAINER_NAME}` es el nombre del contenedor:
 
 ```sh
     docker exec -ti {CONTAINER_NAME} /bin/bash
@@ -57,4 +57,4 @@ Donde `{CONTAINER_NAME}` es:
 * `{APP_NAME}-mariadb`
 
 ### Bibliográfia
-Este repositorio es una mejora al siguiente: https://github.com/stevenliebregt/docker-compose-lemp-stack
+Este repositorio es una mejora de este: https://github.com/stevenliebregt/docker-compose-lemp-stack
