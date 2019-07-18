@@ -1,20 +1,32 @@
-version: "2"
+version: '3'
 services:
-  nginx:
-    container_name: nginx
-    image: nginx
-    volumes:
-    - ./nginx.conf:/etc/nginx/conf.d/default.conf
-    ports:
-    - "80:80"
-    links:
-      - mongo
-    extra_hosts:
-    - "dockerhost:172.17.0.1"
-  mongo:
-      container_name: mongo
-      image: mongo
-      volumes:
-        - ./data:/data/db
-      ports:
-        - "27017:27017"
+    mariadb:
+        image: 'mariadb:10.3.9'
+        container_name: ${APP_NAME:?err}-mariadb
+        restart: 'on-failure'
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?err}
+            MYSQL_DATABASE: ${MYSQL_DATABASE:?err}
+        volumes:
+            - ./docker/volumes/mariadb:/var/lib/mysql
+        ports:
+        - 3306:3306
+    php:
+        build: docker/dockerfiles/php/
+        container_name: ${APP_NAME:?err}-php
+        links: 
+        - 'mariadb'
+        volumes:
+            - './app:/var/www/html'
+
+    nginx:
+        image: 'nginx:1.13.6'
+        container_name: ${APP_NAME:?err}-nginx
+        ports:
+            - '80:80'
+            - '443:443'
+        links:
+            - 'php'
+        volumes:
+            - './app:/var/www/html'
+            - './docker/dockerfiles/nginx:/etc/nginx/conf.d'
