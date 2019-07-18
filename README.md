@@ -3,7 +3,7 @@
 Este repositorio contiene una pequeña configuración `docker-compose` para un server local  `LEMP (Linux, Nginx, MariaDB, PHP)` con contenedores separados, incluyendo una base de datos vacia.
 [![LEMP](https://www.techcoil.com/wp-content/uploads/2018/03/lemp-logos.gif)](https://www.nginx.com/)
 
-# Antes de Correr
+# Antes de Ejecutar
 - Se debe tener instalado y configurado Docker Compose.
 [![docker-compose](https://cdn-images-1.medium.com/max/1400/1*olciNQ2FJu8HVmfjOjQCag.png)](https://docs.docker.com/)
 
@@ -57,4 +57,4 @@ Donde `{CONTAINER_NAME}` es:
 * `{APP_NAME}-mariadb`
 
 ### Bibliográfia
-Este repositorio es una mejora al siguiente: (https://github.com/stevenliebregt/docker-compose-lemp-stack)
+Este repositorio es una mejora al siguiente: https://github.com/stevenliebregt/docker-compose-lemp-stack
