@@ -34,7 +34,7 @@ Puedes encontrar las siguientes variables de entorno incluidas en el archivo `.e
 - Entrar en la carpeta donde desea que ejecute
 - Descargar todo haciendo un clone.
 ```sh
-git clone https://github.com/rstark1/docker-laravel-linux-nginx-mysql-redis-php-2-versions
+git clone git@gitlab.com:jehutyhernandez/tw-docker-laravel-nginx-mysql-2-php.git
 ```
 - Iniciar el servidor ejecutando el comando en consola:
 ```sh
@@ -42,7 +42,7 @@ $ docker-compose up -d
 ```
 - Escribir en la barra de direccciones del navegador : 
 ```sh
-    http://site8.test/ y http://site74.test/
+    http://pass.tw/ y http://dpcs.tw/
 ```
 
 ## Entrando a los contenedores
@@ -61,4 +61,4 @@ Donde `{CONTAINER_NAME}` es el nombre del contenedor:
 * `{APP_NAME}-redis`
 
 ### Referencia
-Este repositorio es una mejora de este: https://github.com/rstark1/docker-linux-nginx-mariadb-php.git
+Este repositorio es una mejora de este: https://github.com/rstark1/docker-laravel-linux-nginx-mysql-redis-php-2-versions
