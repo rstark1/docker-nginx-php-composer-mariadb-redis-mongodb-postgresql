@@ -1,6 +1,6 @@
-# DOCKER COMPOSE LEMP (LINUX NGINX,MYSQL,PHP)
+# DOCKER COMPOSE LEMP (LINUX NGINX,MYSQL,PostgreSQL,PHP)
 
-Este repositorio contiene una pequeña configuración `docker-compose` para un server local  `LEMP (Linux, Nginx, MySQL, Redis, PHP 2 Versiones)` con contenedores separados, incluyendo una base de datos vacia.
+Este repositorio contiene una pequeña configuración `docker-compose` para un server local  `LEMP (Linux, Nginx, MySQL, PostgreSQL, Redis, PHP 2 Versiones)` con contenedores separados, incluyendo una base de datos vacia.
 [![LEMP](https://www.techcoil.com/wp-content/uploads/2018/03/lemp-logos.gif)](https://www.nginx.com/)
 
 # Antes de ejecutar
@@ -11,10 +11,11 @@ Este repositorio contiene una pequeña configuración `docker-compose` para un s
 
 Se usaron las siguientes versiones:
 
-* PHP 7.4.3 (FPM)
-* PHP 8.0 (FPM)
+* PHP 7.4.3 (FPM) con Xdebug
+* PHP 8.0 (FPM) con Xdebug
 * Nginx 1.23.1
 * MYSQL 8.0.30
+* POSTGRESQL 10.17
 
 ## Configuración
 
