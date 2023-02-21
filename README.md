@@ -1,6 +1,6 @@
 # DOCKER COMPOSE LEMP (LINUX NGINX,MYSQL,PostgreSQL,PHP)
 
-Este repositorio contiene una pequeña configuración `docker-compose` para un server local  `LEMP (Linux, Nginx, MySQL, PostgreSQL, Redis, PHP 2 Versiones)` con contenedores separados, incluyendo una base de datos vacia.
+Este repositorio contiene una pequeña configuración `docker-compose` para un server local  `LEMP (Linux, Nginx, MariaDB, PostgreSQL, Redis, Composer, PHP)` con contenedores separados, incluyendo una base de datos vacia.
 [![LEMP](https://www.techcoil.com/wp-content/uploads/2018/03/lemp-logos.gif)](https://www.nginx.com/)
 
 # Antes de ejecutar
@@ -11,11 +11,13 @@ Este repositorio contiene una pequeña configuración `docker-compose` para un s
 
 Se usaron las siguientes versiones:
 
-* PHP 7.4.3 (FPM) con Xdebug
-* PHP 8.0 (FPM) con Xdebug
-* Nginx 1.23.1
-* MYSQL 8.0.30
-* POSTGRESQL 10.17
+* PHP 7.2 (FPM) con Xdebug 3.1.5
+* Composer 1.9.0
+* Nginx 1.14.0
+* MariaDB 10.4.8
+* PosgreSQL 13.4
+* Redis 4.0.9
+* Mongo 5.0.3
 
 ## Configuración
 
@@ -27,9 +29,11 @@ Puedes encontrar las siguientes variables de entorno incluidas en el archivo `.e
 | Clave | Descripción |
 |-----|-------------|
 |APP_NAME|Nombre base utilizado para crear los contenedores.|
-|MYSQL_DATABASE|Nombre de la base de datos vacia.|
-|MYSQL_ROOT_PASSWORD|La contraseña del usuario ROOT.|
-|REDIS_PASSWORD|La contraseña de Redis.|
+|MARIADB_DATABASE|Nombre de la base de datos de ejemplo de MariaDB.|
+|MARIADB_ROOT_PASSWORD|Password de MariaDB.|
+|POSTGRESQL_USER|Nombre del usuario de PostgreSQL.|
+|POSTGRESQL_PASSWORD|Password de PostgreSQL.|
+|POSTGRESQL_DATABASE|Nombre de la base de datos de ejemplo de PostgreSQL.|
 
 ### Instrucciones de instalación
 - Entrar en la carpeta donde desea que ejecute
@@ -43,7 +47,7 @@ $ docker-compose up -d
 ```
 - Escribir en la barra de direccciones del navegador : 
 ```sh
-    http://pass.tw/ y http://dpcs.tw/
+    http://pwa.host/
 ```
 
 ## Entrando a los contenedores
@@ -55,11 +59,12 @@ Donde `{CONTAINER_NAME}` es el nombre del contenedor:
 ```sh
     docker exec -ti {CONTAINER_NAME} /bin/bash
 ```
-* `{APP_NAME}-php8`
-* `{APP_NAME}-php74`
+* `{APP_NAME}-php`
 * `{APP_NAME}-nginx`
-* `{APP_NAME}-mysql`
+* `{APP_NAME}-mariadb`
+* `{APP_NAME}-mongo`
+* `{APP_NAME}-postgresql`
 * `{APP_NAME}-redis`
 
 ### Referencia
-Este repositorio es una mejora de este: https://github.com/rstark1/docker-laravel-linux-nginx-mysql-redis-php-2-versions
+Este repositorio es una mejora de este: https://gitlab.com/jehutyhernandez/tw-docker-laravel-nginx-mysql-2-php
