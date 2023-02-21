@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:7.2-fpm
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -21,8 +21,8 @@ RUN docker-php-ext-install pgsql pdo pdo_pgsql pdo_mysql mbstring exif pcntl bcm
 RUN pecl install redis && docker-php-ext-enable redis
 
 # Install Xdebug
-RUN pecl install xdebug \
+RUN pecl install xdebug-3.1.5 \
     && docker-php-ext-enable xdebug
 
 # Get Composer
-COPY --from=composer:2.4.0 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:1.9.0 /usr/bin/composer /usr/bin/composer
