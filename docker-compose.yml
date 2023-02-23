@@ -14,6 +14,8 @@ services:
         build: docker/dockerfiles/postgresql/       
         user: ${POSTGRESQL_USER:?err}
         container_name: ${APP_NAME:?err}-postgresql
+        links: 
+            - 'mariadb'
         environment:
             POSTGRES_USER: ${POSTGRESQL_USER:?err}
             POSTGRES_PASSWORD: ${POSTGRESQL_PASSWORD:?err}
