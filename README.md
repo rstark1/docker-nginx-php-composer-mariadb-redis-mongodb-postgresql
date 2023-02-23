@@ -39,7 +39,7 @@ Puedes encontrar las siguientes variables de entorno incluidas en el archivo `.e
 - Entrar en la carpeta donde desea que ejecute
 - Descargar todo haciendo un clone.
 ```sh
-git clone git@gitlab.com:jehutyhernandez/tw-docker-laravel-nginx-mysql-2-php.git
+git clone git@gitlab.com:jehutyhernandez/docker-nginx-php-composer-mariadb-redis-mongodb-postgresql
 ```
 - Iniciar el servidor ejecutando el comando en consola:
 ```sh
